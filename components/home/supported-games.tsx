@@ -1,20 +1,18 @@
-import styles from '../../styles/Home.module.css'
+import styles from "../../styles/Home.module.css";
 
-function SupportedGames() {
+export default function SupportedGames() {
+  function SupportedGameIcon({ gameName }: { gameName: string }) {
+    return <div className={styles.supportedGameIcon}>{gameName}</div>;
+  }
+
   return (
-      <div className={styles.supportGamesBackground}>
-        <SupportedGameIcon gameName="Brandon One"/>
-        <SupportedGameIcon gameName="Brandon Two"/>
-        <SupportedGameIcon gameName="Brandon Three"/>
+    <div className={styles.supportGamesBackground}>
+      <div className={styles.supportedGamesTitle}>SUPPORTED GAMES</div>
+      <div className={styles.supportedGamesIcons}>
+        <SupportedGameIcon gameName="Brandon One" />
+        <SupportedGameIcon gameName="Brandon Two" />
+        <SupportedGameIcon gameName="Brandon Three" />
       </div>
-    )
+    </div>
+  );
 }
-
-function SupportedGameIcon({gameName}: {gameName: string}) {
-  return (
-    <div>{gameName}</div>
-  )
-}
-
-  
-export default SupportedGames

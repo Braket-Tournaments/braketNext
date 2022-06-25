@@ -1,6 +1,34 @@
 .supportGamesBackground {
+    display: flex;
+    flex-direction: column;
     background-color: #F1F1F1;
+    height: 50vh;
+}
+
+.supportedGamesIcons {
     display: flex;
     flex-direction: row;
+    height: 75%;
+    padding: 10% 10% 10% 10%
+}
+
+.supportedGamesTitle {
+    font-size: 2rem;
+}
+
+.homePageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.supportedGameIcon {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    width: calc(100% / 3);
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }

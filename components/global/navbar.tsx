@@ -1,5 +1,5 @@
-function Navbar() {
-  return <div>About</div>
+import styles from "../../styles/Home.module.css";
+
+export default function Navbar() {
+  return <div></div>;
 }
-    
-export default Navbar
