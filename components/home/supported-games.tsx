@@ -50,6 +50,9 @@ function SupportedGames() {
             hoverImg="/home/brandon.PNG"
           />
           <div className={styles.noSpaceGameIconsSide}></div>
+      <div className="flex flex-col h-screen">
+        <div className={styles.supportedGamesTitle}>
+          SUPPORTED GAMES
         </div>
         {/* THIS IS TO MAKE SURE THAT WHEN YOU HOVER THE EDGES OF THE CONTAINER YOU DON'T ALSO GO INTO GRAYSCALE! */}
         <div className={styles.supportedGamesIcons}>
