@@ -12,6 +12,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SupportedGames />
+      <SupportedGames />
+      <div className={styles.square} />
 
     </div>
   )
