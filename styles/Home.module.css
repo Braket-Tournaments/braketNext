@@ -1,6 +1,84 @@
 .supportGamesBackground {
+    display: flex;
+    flex-direction: column;
     background-color: #F1F1F1;
+    height: 50vh;
+}
+
+.supportedGamesIcons {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    height: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    transform-style: preserve-3d;
+}
+
+.supportedGamesTitle {
+    font-size: 2rem;
+}
+
+.homePageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+    width: 100vw;
+}
+
+.supportedGameIcon {
+    background-color: rgba(217, 217, 217, 0.5);
+    position: relative;
+    width: calc(80% / 3);
+    height: 100%;
+    transition: 1s;
+}
+
+.supportedGameIcon:hover {
+    background-color: rgba(217, 217, 217, 1);
+    cursor: pointer;
+}
+
+.gameIconImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width:100%;
+    max-height:100%;
+    transition: 1s;
+}
+
+.gameIconImage:hover {
+    transform: scale(1.25);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.supportedGamesIcons:hover .gameIconImage:not(:hover) {
+    transform: scale(0.95);
+    filter: grayscale(80%) blur(0.07rem);
+}
+
+/* .supportedGamesIcons:hover .gameIconImage:not(:hover) {
+    transform:scale(1);
+    filter: grayscale(0%) blur(0rem);
+} */
+
+
+.lowerOpacityGameIconImage.gameIconImage:hover {
+    display: none;
+}
+
+.higherOpacityGameIconImage.gameIconImage:hover {
+    /* display: none; */
+}
+
+.noSpaceGameIconsMiddle {
+    width: calc(8% / 2);
+    background-color: red;
+    transform: translateZ(-10px);
+}
+
+.noSpaceGameIconsSide {
+    width: calc(12% / 2);
+    background-color: red;
+    transform: translateZ(-10px);
 }
