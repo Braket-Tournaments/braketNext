@@ -7,6 +7,7 @@ const Home: NextPage = () => {
     <div className={styles.homePageContainer}>
       <SupportedGames />
       <SupportedGames />
+      <div className={styles.square} />
     </div>
   );
 };
