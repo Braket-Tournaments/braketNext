@@ -76,7 +76,7 @@ export default function SupportedGames() {
           <SupportedGameIcon
             gameName="Elo-Deflated"
             initalImg="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_4.jpg"
-            hoverImg="/home/brandon.PNG"
+            hoverImg="/images/brandon.png"
           />
           <div className={styles.noSpaceGameIconsSide}></div>
         </div>

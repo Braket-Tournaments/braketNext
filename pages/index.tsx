@@ -1,15 +1,17 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 
+import Navbar from "../components/global/navbar";
 import SupportedGames from "../components/home/supported-games";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.homePageContainer}>
+    <>
+      <Navbar />
+      {/* <SupportedGames />
       <SupportedGames />
-      <SupportedGames />
-      <div className={styles.square} />
-    </div>
+      <div className={styles.square} /> */}
+    </>
   );
 };
 
