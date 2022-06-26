@@ -2,7 +2,7 @@ import styles from '../../styles/Home.module.css'
 
 function SupportedGames() {
   return (
-      <div className={styles.supportGamesBackground}>
+      <div className="flex flex-col h-screen">
         <div className={styles.supportedGamesTitle}>
           SUPPORTED GAMES
         </div>
