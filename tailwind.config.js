@@ -10,7 +10,7 @@ module.exports = {
         arrowsvg: "3px 5px 2px rgb(0 0 0 / 0.4)",
       },
       fontFamily: {
-        HinaMincho: ["HinaMincho", "regular"],
+        HinaMincho: ["HinaMincho", "serif"],
       },
       width: {
         "5%": "5%",
