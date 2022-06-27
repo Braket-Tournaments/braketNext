@@ -8,9 +8,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Navbar />
-      {/* <SupportedGames />
       <SupportedGames />
-      <div className={styles.square} /> */}
+      <SupportedGames />
+      <div className={styles.square} />
+      
     </>
   );
 };

@@ -6,8 +6,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        arrowsvg: "3px 5px 2px rgb(0 0 0 / 0.4)",
+      },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        HinaMincho: ["HinaMincho", "regular"],
+      },
+      width: {
+        "5%": "5%",
+        "80%/3": "calc(80% / 3)",
       },
     },
   },
