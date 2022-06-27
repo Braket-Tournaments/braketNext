@@ -9,7 +9,7 @@ export default function SupportedGames() {
     hoverImg: string;
   }) {
     return (
-      <div className="relative w-80%/3 z-1 h-[75%] shadow-2xl hover:cursor-pointer hover:shadow-none">
+      <div className="relative w-80%/3 z-1 h-[65%] shadow-2xl hover:cursor-pointer hover:shadow-none">
         <img
           className="absolute h-full w-full max-w-full max-h-full transition duration-500"
           src={hoverImg}
