@@ -38,7 +38,7 @@
     z-index: -1;
 }
 
-.supportedGamesTitle {
+.supportedGamesTitle .featuresTitle{
     font-size: 3rem;
     margin-left: 6rem;
     margin-top: 2rem;
