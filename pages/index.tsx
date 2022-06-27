@@ -7,7 +7,7 @@ import Footer from "../components/home/footer"
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col">
       <Navbar />
       <SupportedGames />
       <ReadyToStart />
