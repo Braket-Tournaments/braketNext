@@ -25,7 +25,7 @@ export default function SupportedGames() {
   }
 
   return (
-    <div className="flex flex-col h-[38rem]">
+    <div className="flex flex-col h-[38rem] w-[118.96rem]">
       <div className="text-4xl ml-24 mt-8 shadow-gray-700">SUPPORTED GAMES</div>
       <svg
         className="drop-shadow-arrowsvg"

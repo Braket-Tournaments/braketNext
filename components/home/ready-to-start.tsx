@@ -9,7 +9,7 @@ export default function ReadyToStart() {
     }
 
     return (
-        <div className="bg-secondary-red h-[46rem] flex flex-col justify-center items-center">
+        <div className="bg-secondary-red h-[46rem] w-[118.96rem] flex flex-col justify-center items-center">
             <div className="flex flex-col text-center text-white">
                 <h1 className="text-6xl tracking-wide mb-6">Ready to Start?</h1>
                 <h5 className="text-4xl tracking-wide">Create an account for free and start planning!</h5>
