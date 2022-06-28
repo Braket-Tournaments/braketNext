@@ -25,11 +25,21 @@ export default function Navbar() {
       </ul>
 
       <ul className="w-r25 h-full text-[1.25rem] text-secondary-background tracking-wider flex items-center justify-between">
-        <li className="ml-r2 mr-r1 w-r9 h-3/5 rounded-xl bg-log-in-button flex items-center justify-center drop-shadow-nav-buttons">
-          <a href="">LOG IN</a>
+        <li className="h-3/5">
+          <a
+            className="ml-r2 mr-r1 w-r9 h-full rounded-xl bg-log-in-button flex items-center justify-center drop-shadow-nav-buttons"
+            href=""
+          >
+            LOG IN
+          </a>
         </li>
-        <li className="ml-r1 mr-r2 w-r9 h-3/5 rounded-xl bg-sign-up-button flex items-center justify-center drop-shadow-nav-buttons">
-          <a href="">SIGN UP</a>
+        <li className="h-3/5">
+          <a
+            className="ml-r1 mr-r2 w-r9 h-full rounded-xl bg-sign-up-button flex items-center justify-center drop-shadow-nav-buttons"
+            href=""
+          >
+            SIGN UP
+          </a>
         </li>
       </ul>
     </div>
