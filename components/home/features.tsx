@@ -30,19 +30,61 @@ export default function Features() {
             fill="#904E55"
             />
             </svg>
-        <svg>
-            <g>
-                <rect 
-                className="hover:animate-spin"
-                x="calc(((100%/6) * 0) + 100)"
-                y="20"
-                height="300"
-                width="300"
-                fill="#288BA8"
-                />
-                <text x="1" y="50" font-family="Verdana" font-size="35" fill="blue">Hello</text>
-            </g>
-        </svg>
+
+            <div className="h-full w-3/5 flex flex-rows gap-r10 ml-20">
+                <div className="bg-blue-600">
+                    <g>
+                        <svg>
+                            <rect height="0.33333"
+                            width="560"
+                            y="20"
+                            x="0"
+                            stroke="#904E55"
+                            fill="#904E55"/>
+                            <text x="0" y="50" fill="blue">Hello</text>
+                        </svg>
+                    </g>
+                </div>
+                <div className="bg-blue-600">
+                    <g>
+                        <svg>
+                            <rect height="0.33333"
+                            width="560"
+                            y="20"
+                            x="0"
+                            stroke="#904E55"
+                            fill="#904E55"/>
+                            <text x="0" y="50" fill="blue">Hello</text>
+                        </svg>
+                    </g>
+                </div>
+                <div className="bg-blue-600">
+                    <g>
+                        <svg>
+                            <rect height="0.33333"
+                            width="560"
+                            y="20"
+                            x="0"
+                            stroke="#904E55"
+                            fill="#904E55"/>
+                            <text x="0" y="50" fill="blue">Hello</text>
+                        </svg>
+                    </g>
+                </div>
+                <div className="bg-blue-600">
+                    <g>
+                        <svg>
+                            <rect height="0.33333"
+                            width="560"
+                            y="20"
+                            x="0"
+                            stroke="#904E55"
+                            fill="#904E55"/>
+                            <text x="0" y="50" fill="blue">Hello</text>
+                        </svg>
+                    </g>
+                </div>
+            </div>
     </div>
   )  
 };

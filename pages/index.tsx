@@ -8,7 +8,7 @@ import Features from "../components/home/features";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col">
       <Navbar />
       <SupportedGames />
       <Features />
