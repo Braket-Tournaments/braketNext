@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <div className="w-full h-[6.5rem] bg-main-red flex items-center justify-between">
+    <nav className="w-full h-[6.5rem] bg-main-red flex items-center justify-between">
       <a className="w-r25 h-full flex items-center" href="/">
         <img
           src="/images/logo.png"
@@ -42,6 +42,6 @@ export default function Navbar() {
           </a>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }
