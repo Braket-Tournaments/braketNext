@@ -40,7 +40,7 @@ export default function Features() {
                 width="300"
                 fill="#288BA8"
                 />
-                <text x="1" y="50" font-family="Verdana" font-size="35" fill="blue">Hello</text>
+                <text x="1" y="50" fontFamily="Verdana" fontSize="35" fill="blue">Hello</text>
             </g>
         </svg>
     </div>

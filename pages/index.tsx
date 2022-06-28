@@ -7,6 +7,7 @@ import Footer from "../components/home/footer"
 import Features from "../components/home/features";
 import PitchDeck from "../components/home/pitch-deck"
 
+import { MyComponent } from "../components/home/framer";
 const Home: NextPage = () => {
   return (
     <div className="flex flex-col">
@@ -16,6 +17,8 @@ const Home: NextPage = () => {
       <Features />
       <ReadyToStart />
       <Footer />
+      <div className="h-10 bg-slate-700"></div>
+      <MyComponent isVisible={true}/>
     </div>
   );
 };
