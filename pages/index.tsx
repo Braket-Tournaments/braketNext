@@ -2,10 +2,10 @@ import type { NextPage } from "next";
 
 import Navbar from "../components/global/navbar";
 import SupportedGames from "../components/home/supported-games";
-import ReadyToStart from "../components/home/ready-to-start"
-import Footer from "../components/home/footer"
+import ReadyToStart from "../components/home/ready-to-start";
+import Footer from "../components/global/footer";
 import Features from "../components/home/features";
-import PitchDeck from "../components/home/pitch-deck"
+import PitchDeck from "../components/home/pitch-deck";
 
 const Home: NextPage = () => {
   return (

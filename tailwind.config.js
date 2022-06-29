@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
@@ -66,9 +68,6 @@ module.exports = {
       dropShadow: {
         arrowsvg: "3px 5px 2px rgb(0 0 0 / 0.4)",
       },
-      fontFamily: {
-        HinaMincho: ["HinaMincho", "serif"],
-      },
       width: {
         "5%": "5%",
         "80%/3": "calc(80% / 3)",
@@ -84,5 +83,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 };

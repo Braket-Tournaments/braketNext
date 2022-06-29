@@ -6,22 +6,21 @@
     margin: 0;
     padding: 0;
     border: 0;
-    font: inherit;
     vertical-align: baseline;
     box-sizing: border-box;
-    font-family: "HinaMincho";
+    font-family: "HinoMincho";
 }
-  
+
 :root {
     font-size: 10px;
 }
 
-@layer base {
-    @font-face {
-      font-family: "HinaMincho";
-      src: url('/fonts/HinaMincho-Regular.ttf') format('ttf');
-      font-weight: 400;
-      font-display: swap;
-      font-style: normal;
-    }
+@font-face {
+    font-family: "HinaMincho";
+    /*     src: url('../public/fonts/HinaMincho/HinaMincho-regular.ttf') format('ttf'); */
+    src: url('../public/fonts/HinaMincho/HinaMincho-regular.woff2') format('woff2'), url('../public/fonts/HinaMincho/HinaMincho-regular.woff') format('woff');
+    font-weight: 400;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
