@@ -81,6 +81,9 @@ module.exports = {
       animation: {
         "color-slide": "color-slide .3s ease-in 1",
       },
+      fontFamily: {
+        sans: ["HinaMincho", ...defaultTheme.fontFamily.sans],
+      },
     },
   },
 };
