@@ -36,13 +36,22 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
+  id                String              @id @default(cuid())
+  name              String?
+  email             String?             @unique
+  emailVerified     DateTime?
+  image             String?
+  accounts          Account[]
+  sessions          Session[]
+  BraketUserProfile BraketUserProfile[]
+}
+
+model BraketUserProfile {
+  id           Int     @id @default(autoincrement())
+  userId       String
+  user         User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  biography    String?
+  profileImage String?
 }
 
 model VerificationToken {
@@ -51,4 +60,14 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Post {
+  id        String   @id @default(uuid())
+  title     String
+  text      String
+  // To return `Date`s intact through the API we need to add data transformers
+  // https://trpc.io/docs/data-transformers
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 }

@@ -1,9 +1,7 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import { PrismaClient } from "@prisma/client"
-
-const prisma = new PrismaClient()
+import { prisma } from "server/prisma"
 
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
@@ -21,6 +19,18 @@ export default NextAuth({
         token.idToken = account.access_token
       }
       return token
+    },
+    async signIn({ user, account, profile, email, credentials }) {
+      const isAllowedToSignIn = true
+      console.log(user.image)
+      if (isAllowedToSignIn) {
+        return true
+      } else {
+        // Return false to display a default error message
+        return false
+        // Or you can return a URL to redirect to:
+        // return '/unauthorized'
+      }
     },
     // async session({ session, token, user }) {
     //   // Send properties to the client, like an access_token from a provider.

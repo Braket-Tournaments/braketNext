@@ -34,10 +34,10 @@ export default function Navbar() {
         </li>
         <li className="h-3/5">
           <a
-            className="ml-r1 mr-r2 w-r9 h-full rounded-xl bg-sign-up-button flex items-center justify-center drop-shadow-nav-buttons"
-            href=""
+            className="ml-r1 mr-r2 w-r9 h-full rounded-xl bg-sign-up-button flex items-center justify-center drop-shadow-nav-buttons text-center"
+            href="./profile"
           >
-            SIGN UP
+            YOUR PROFILE
           </a>
         </li>
       </ul>
