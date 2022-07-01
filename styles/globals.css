@@ -3,11 +3,24 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "HinaMincho";
-    src: url('/fonts/HinaMincho-Regular.ttf') format('ttf');
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-  }
+    @font-face {
+        font-family: "HinaMincho";
+        src: url('/fonts/HinaMincho/HinaMincho-regular.woff2') format('woff2'), url('/fonts/HinaMincho/HinaMincho-regular.woff') format('woff');
+        font-weight: 400;
+        font-weight: normal;
+    }
+
+    :root {
+        font-size: 10px;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+        box-sizing: border-box;
+    }
 }
+
+
