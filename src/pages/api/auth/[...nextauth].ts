@@ -2,6 +2,8 @@ import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { prisma } from "server/prisma"
+import { trpc } from "utils/trpc";
+import { profileEnd } from "console";
 
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
@@ -21,8 +23,8 @@ export default NextAuth({
       return token
     },
     async signIn({ user, account, profile, email, credentials }) {
+      
       const isAllowedToSignIn = true
-      console.log(user.image)
       if (isAllowedToSignIn) {
         return true
       } else {
