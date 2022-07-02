@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <nav className="w-full h-[6.5rem] bg-main-red flex items-center justify-between">
+    <nav className="w-full h-[var(--navbar-height)] bg-main-red flex items-center justify-between">
       <a className="w-r25 h-full flex items-center" href="/">
         <img
           src="/images/logo.png"
@@ -12,7 +12,10 @@ export default function Navbar() {
         </p>
       </a>
 
-      <ul className="w-r25 h-full text-[2rem] text-secondary-background flex items-center justify-between">
+      <ul className="w-[55rem] h-full text-[2rem] text-secondary-background flex items-center justify-between">
+        <li>
+          <a href="">Tournaments</a>
+        </li>
         <li>
           <a href="">About</a>
         </li>
