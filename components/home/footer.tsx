@@ -40,18 +40,18 @@ export default function Footer() {
                 />
             </svg>
                 <div className="flex flex-row">
-                    <button className="flex justify-center ml-[8.75rem] rounded-full bg-white w-12 h-12">
+                    <a href="" className="flex justify-center ml-[8.75rem] rounded-full bg-white w-12 h-12 shadow-md">
                         <RiLinkedinFill className="w-8 h-8 mt-2 fill-main-red"/>
-                    </button>
-                    <button className="flex justify-center rounded-full bg-white w-12 h-12 ml-5">
+                    </a>
+                    <a href="" className="flex justify-center rounded-full bg-white w-12 h-12 ml-5 shadow-md">
                         <RiTwitterLine className="w-8 h-8 mt-2 fill-main-red"/>
-                    </button>
-                    <button className="flex justify-center rounded-full bg-white w-12 h-12 ml-5">
+                    </a>
+                    <a href="" className="flex justify-center rounded-full bg-white w-12 h-12 ml-5 shadow-md">
                         <AiOutlineGithub className="w-8 h-8 mt-2 fill-main-red"/>
-                    </button>
-                    <button className="flex justify-center rounded-full bg-white w-12 h-12 ml-5">
+                    </a>
+                    <a href="" className="flex justify-center rounded-full bg-white w-12 h-12 ml-5 shadow-md">
                         <BsDiscord className="w-8 h-8 mt-[.65rem] fill-main-red"/>
-                    </button>
+                    </a>
                 </div>
             </div>
             <div className="h-full w-3/5 flex flex-col text-white">
@@ -87,12 +87,12 @@ export default function Footer() {
                     <h1 className="text-xl tracking-wider">Choose your language</h1>
                     <hr className="w-60 mt-1"/>
                     <div className="flex flex-row space-x-14 mt-5">
-                        <p>English</p>
-                        <p>French</p>
-                        <p>Chinese</p>
-                        <p>Spanish</p>
-                        <p>Russian</p>
-                        <p>Korean</p>
+                        <a href="">English</a>
+                        <a href="">French</a>
+                        <a href="">Chinese</a>
+                        <a href="">Spanish</a>
+                        <a href="">Russian</a>
+                        <a href="">Korean</a>
                     </div>
                 </div>
             </div>
