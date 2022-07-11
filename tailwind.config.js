@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
@@ -64,10 +66,7 @@ module.exports = {
         "sign-up-accent": "#4E8098",
       },
       dropShadow: {
-        arrowsvg: "3px 5px 2px rgb(0 0 0 / 0.4)",
-      },
-      fontFamily: {
-        HinaMincho: ["HinaMincho", "serif"],
+        arrowsvg: "0rem 0.4rem 0.4rem rgb(0 0 0 / 0.4)",
       },
       width: {
         "5%": "5%",
@@ -82,7 +81,9 @@ module.exports = {
       animation: {
         "color-slide": "color-slide .3s ease-in 1",
       },
+      fontFamily: {
+        sans: ["HinaMincho", ...defaultTheme.fontFamily.sans],
+      },
     },
   },
-  plugins: [],
 };

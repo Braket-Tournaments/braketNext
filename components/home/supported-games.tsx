@@ -16,7 +16,9 @@ export default function SupportedGames() {
           alt={gameName}
         />
         <img
-          className={"absolute h-full w-full max-w-full max-h-full transition duration-500 group-hover:grayscale-[80%] group-hover:blur-[0.07rem] hover:!scale-110 hover:!opacity-0 z-10"}
+          className={
+            "absolute h-full w-full max-w-full max-h-full transition duration-500 group-hover:grayscale-[80%] group-hover:blur-[0.07rem] hover:!scale-110 hover:!opacity-0 z-10"
+          }
           src={initalImg}
           alt={gameName}
         />
@@ -25,7 +27,7 @@ export default function SupportedGames() {
   }
 
   return (
-    <div className="flex flex-col h-[38rem] w-[118.96rem]">
+    <div className="flex flex-col h-[38rem] w-full]">
       <div className="text-4xl ml-24 mt-8 shadow-gray-700">SUPPORTED GAMES</div>
       <svg
         className="drop-shadow-arrowsvg"
