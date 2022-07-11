@@ -1,3 +1,5 @@
+import UserAuth from "./login-btn"
+
 export default function Navbar() {
   return (
     <nav className="w-full h-[var(--navbar-height)] bg-main-red flex items-center justify-between">
@@ -29,19 +31,16 @@ export default function Navbar() {
 
       <ul className="w-r25 h-full text-[1.25rem] text-secondary-background tracking-wider flex items-center justify-between">
         <li className="h-3/5">
-          <a
+          <UserAuth
             className="ml-r2 mr-r1 w-r9 h-full rounded-xl bg-log-in-button flex items-center justify-center drop-shadow-nav-buttons"
-            href=""
-          >
-            LOG IN
-          </a>
+          />
         </li>
         <li className="h-3/5">
           <a
-            className="ml-r1 mr-r2 w-r9 h-full rounded-xl bg-sign-up-button flex items-center justify-center drop-shadow-nav-buttons"
-            href=""
+            className="ml-r1 mr-r2 w-r9 h-full rounded-xl bg-sign-up-button flex items-center justify-center drop-shadow-nav-buttons text-center"
+            href="./profile"
           >
-            SIGN UP
+            YOUR PROFILE
           </a>
         </li>
       </ul>
