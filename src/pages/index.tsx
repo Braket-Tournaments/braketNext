@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <Navbar />
       <PitchDeck />
       <SupportedGames />
-      <Features />
+      {/* <Features /> */}
       <ReadyToStart />
       <Footer />
     </div>
