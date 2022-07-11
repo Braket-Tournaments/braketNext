@@ -5,23 +5,25 @@ import { scale } from "../../constants";
 
 export default function DecorLine({
   width = 60,
-  radius = 0.8,
+  radius = 0.5,
   thickness = radius / 2,
   isLeft = true,
   color = "#904E55",
+  className = "",
 }: {
   width?: number;
   radius?: number;
   thickness?: number;
   isLeft?: boolean;
   color?: string;
+  className?: string;
 }) {
   width *= scale;
   radius *= scale;
   thickness *= scale;
 
   return (
-    <div className="overflow-clip">
+    <div className={"overflow-clip " + className}>
       <svg
         width={width + "px"}
         height={2 * radius + "px"}
@@ -47,8 +49,3 @@ export default function DecorLine({
     </div>
   );
 }
-
-/* width = "600px",
-radius = "8px",
-thickness = "4px",
-isLeft = true, */

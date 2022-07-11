@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               font-size: var(--font-size);
               --navbar-height: 6.5rem;
               --home-carousel-width: 85rem;
-              --home-carousel-height: calc(85rem / (16 / 9));
+              --home-carousel-height: calc(var(--home-carousel-width) / (16 / 9));
             }
           `}
         </style>

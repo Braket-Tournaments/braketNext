@@ -46,10 +46,10 @@ export default function PitchDeck() {
     <div className="bg-main-background h-[calc(100vh-var(--navbar-height))] w-full flex items-center justify-between">
       <div className="bg-white w-[var(--home-carousel-width)] h-[var(--home-carousel-height)] ml-[calc(1.5rem+6vw)]"></div>
       <div className="bg-pink-400 w-[calc(var(--home-carousel-width)*0.85)] h-[var(--home-carousel-height)] flex flex-col justify-between">
-        <div className="w-[70%] self-end">
-          <h1 className="mr-20 text-white text-[5rem]">TEXT HERE</h1>
-          <div className="drop-shadow-arrowsvg">
-            <DecorLine width={51.5} />
+        <div className="inline-block">
+          <h1 className="text-white text-[3rem]">HEADER</h1>
+          <div className="flex drop-shadow-arrowsvg">
+            <DecorLine className="w-0 flex-grow-[1]" width={51.5} />
           </div>
         </div>
 
