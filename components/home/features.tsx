@@ -1,11 +1,27 @@
 import { motion } from "framer-motion";
 
+// Add sequential animation when objects appear through scrolling
+const scrollTransitions = {
+    offScreen: {
+        y: 100
+    },
+    onScreen: {
+        y: 0,
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            staggerChildren: 0.5,
+            delayChildren: 0.3
+        }
+    }
+};
+
     export default function Features() {
         return(
             <div className="flex flex-col h-screen bg-inherit bg-zinc-900"> 
 
             {/* Title Bar */}
-                    <div className="text text-5xl ml-6 mt-2 text-right text-white">FEATURES</div>
+                    <div className="text text-5xl ml-6 mt-r5 text-right mr-r5 text-white">FEATURES</div>
                         <svg
                         viewBox="0 0 560 100"
                         width="100%"
@@ -33,26 +49,28 @@ import { motion } from "framer-motion";
                         </svg>
 
                     {/* Categories */}
-                        <div className="h-full w-full flex flex-row mb-20 relative">
-                                <div className="w-5%"></div>
-                                <div className="relative w-80%/3 h-[65%]"> 
-                                    <motion.img whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className="w-full h-full absolute max-w-full max-h-full" src="/images/Organizations.png"/>
-                                </div>
+                        <motion.div initial="offScreen" animate="onScreen" variants = {scrollTransitions} viewport= {{once: false, amount: 0.2}} className="h-full w-full flex flex-row mb-20 relative">
                                 <div className="w-5%"></div>
                                     <div className="relative w-80%/3 h-[65%]"> 
-                                        <motion.img whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className="w-full h-full absolute max-w-full max-h-full" src="/images/Organizations.png"/>
+                                        {/* <motion.img initial={{ opacity: 0 }} whileHover={{ opacity: 1, transition: { duration: 1.2}}} className="w-full h-full absolute max-w-full max-h-full x" src="/images/brandon.png"/> */}
+                                        <motion.img whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
+                                        
                                     </div>
                                 <div className="w-5%"></div>
                                     <div className="relative w-80%/3 h-[65%]"> 
-                                        <motion.img whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className="w-full h-full absolute max-w-full max-h-full" src="/images/Organizations.png"/>
+                                        <motion.img whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
                                     </div>
                                 <div className="w-5%"></div>
                                     <div className="relative w-80%/3 h-[65%]"> 
-                                        <motion.img whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className="w-full h-full absolute max-w-full max-h-full" src="/images/Organizations.png"/>
+                                        <motion.img whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
+                                    </div>
+                                <div className="w-5%"></div>
+                                    <div className="relative w-80%/3 h-[65%]"> 
+                                        <motion.img whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
                                     </div>
                                 <div className="w-5%"></div>
 
-                        </div>
+                        </motion.div>
                 </div>
         )  
     };
