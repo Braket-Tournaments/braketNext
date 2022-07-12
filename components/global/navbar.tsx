@@ -31,19 +31,10 @@ export default function Navbar() {
       </ul>
 
       <ul className="w-r25 h-full text-[1.25rem] text-secondary-background tracking-wider flex items-center justify-between">
-        <li className="h-3/5">
-          <motion.a
-            whileHover={{ 
-              scale: 1.1,
-              boxShadow: "0px 0px 5px 4px"
-            }}
-            className="ml-r2 mr-r1 w-r9 h-full rounded-xl bg-log-in-button flex items-center justify-center drop-shadow-nav-buttons"
-            href=""
-          >
-           <UserAuth
+      <li className="h-3/5">
+          <UserAuth
             className="ml-r2 mr-r1 w-r9 h-full rounded-xl bg-log-in-button flex items-center justify-center drop-shadow-nav-buttons"
           />
-          </motion.a>
         </li>
         <li className="h-3/5">
           <motion.a
