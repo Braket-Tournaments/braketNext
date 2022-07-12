@@ -3,12 +3,11 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { SessionProvider } from "next-auth/react"
 import { withTRPC } from '@trpc/next';
-import { AppType } from 'next/dist/shared/lib/utils';
 import { AppRouter } from 'server/routers/_app';
 import { loggerLink } from '@trpc/client/links/loggerLink'
 import { httpBatchLink } from '@trpc/client/links/httpBatchLink'
 import superjson from "superjson"
-import { url } from '../constants'
+import { url, scale } from '../constants'
 
 function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
   return (
@@ -16,6 +15,17 @@ function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
       <Head>
         <title>Braket</title>
       </Head>
+      <style>
+          {`
+            :root {
+              --font-size: ${scale}px;
+              font-size: var(--font-size);
+              --navbar-height: 6.5rem;
+              --home-carousel-width: 85rem;
+              --home-carousel-height: calc(var(--home-carousel-width) / (16 / 9));
+            }
+          `}
+        </style>
       <SessionProvider session={pageProps.session}>
         <Component {...pageProps} />
       </SessionProvider>

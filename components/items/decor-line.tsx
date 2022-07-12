@@ -1,4 +1,4 @@
-import { scale } from "../../constants";
+import { scale } from "../../src/constants";
 
 // eric is a stinky poopoo head
 // parameters are in REM

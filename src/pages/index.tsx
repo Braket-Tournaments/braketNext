@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import { useSession } from "next-auth/react"
+import { useSession, signIn, signOut } from "next-auth/react"
 
 import Navbar from "../../components/global/navbar";
 import SupportedGames from "../../components/home/supported-games";
 import ReadyToStart from "../../components/home/ready-to-start"
-import Footer from "../../components/home/footer"
+import Footer from "../../components/global/footer"
 import Features from "../../components/home/features";
 import PitchDeck from "../../components/home/pitch-deck"
 
