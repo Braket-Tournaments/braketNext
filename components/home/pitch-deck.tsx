@@ -1,8 +1,9 @@
 import { useRef } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import DecorLine from "../items/decor-line";
 
 export default function PitchDeck() {
-  function Carousel() {
+  /* function Carousel() {
     const img1 = useRef<HTMLDivElement>(null);
     const img2 = useRef<HTMLDivElement>(null);
     const img3 = useRef<HTMLDivElement>(null);
@@ -40,43 +41,19 @@ export default function PitchDeck() {
         ></div>
       </div>
     );
-  }
+  } */
   return (
-    <div className="bg-main-background h-[52rem] w-full flex flex-row">
-      <div className="h-full w-3/5 flex justify-center items-center">
-        <Carousel />
-        {/* <div className="bg-white h-4/6 w-[85%]"></div> */}
-      </div>
-      <div className="h-full w-2/5 flex flex-col justify-center">
-        <div>
-          <h1 className="float-right text-white text-7xl mr-20">TEXT HERE</h1>
-          <svg
-            className="drop-shadow-arrowsvg"
-            width="47.5rem"
-            height="3rem"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              height="0.33333"
-              width="520"
-              y="20"
-              x="250"
-              stroke="#904E55"
-              fill="#904E55"
-            />
-            <ellipse
-              ry="5"
-              rx="5"
-              id="svg_4"
-              cy="20"
-              cx="246"
-              stroke="#904E55"
-              fill="#904E55"
-            />
-          </svg>
+    <div className="bg-main-background h-[calc(100vh-var(--navbar-height))] w-full flex items-center justify-between">
+      <div className="bg-white w-[var(--home-carousel-width)] h-[var(--home-carousel-height)] ml-[calc(1.5rem+6vw)]"></div>
+      <div className="bg-pink-400 w-[calc(var(--home-carousel-width)*0.85)] h-[var(--home-carousel-height)] flex flex-col justify-between">
+        <div className="inline-block">
+          <h1 className="text-white text-[3rem]">HEADER</h1>
+          <div className="flex drop-shadow-arrowsvg">
+            <DecorLine className="w-0 flex-grow-[1]" width={51.5} />
+          </div>
         </div>
 
-        <ul className="ml-32 text-white space-y-1 text-2xl mb-36 list-disc">
+        <ul className="ml-32 text-white space-y-1 text-[2em] mb-36 list-disc">
           <li>A</li>
           <li>B</li>
           <li>C</li>
