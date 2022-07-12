@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import UserAuth from "./login-btn"
 
 export default function Navbar() {
@@ -19,29 +20,42 @@ export default function Navbar() {
           <a href="">Tournaments</a>
         </li>
         <li>
-          <a href="">About</a>
+          <motion.a whileHover={{ textShadow: "0px 0px 8px"}} href="">About</motion.a>
         </li>
         <li>
-          <a href="">Contact</a>
+          <motion.a whileHover={{ textShadow: "0px 0px 8px"}} href="">Contact</motion.a>
         </li>
         <li>
-          <a href="">Support</a>
+          <motion.a whileHover={{ textShadow: "0px 0px 8px"}} href="">Support</motion.a>
         </li>
       </ul>
 
       <ul className="w-r25 h-full text-[1.25rem] text-secondary-background tracking-wider flex items-center justify-between">
         <li className="h-3/5">
-          <UserAuth
+          <motion.a
+            whileHover={{ 
+              scale: 1.1,
+              boxShadow: "0px 0px 5px 4px"
+            }}
+            className="ml-r2 mr-r1 w-r9 h-full rounded-xl bg-log-in-button flex items-center justify-center drop-shadow-nav-buttons"
+            href=""
+          >
+           <UserAuth
             className="ml-r2 mr-r1 w-r9 h-full rounded-xl bg-log-in-button flex items-center justify-center drop-shadow-nav-buttons"
           />
+          </motion.a>
         </li>
         <li className="h-3/5">
-          <a
-            className="ml-r1 mr-r2 w-r9 h-full rounded-xl bg-sign-up-button flex items-center justify-center drop-shadow-nav-buttons text-center"
+          <motion.a
+            whileHover={{ 
+              scale: 1.2,
+              boxShadow: "0px 0px 5px 4px"
+            }}
+            className="ml-r1 mr-r2 w-r9 h-full rounded-xl bg-sign-up-button flex items-center justify-center drop-shadow-nav-buttons"
             href="./profile"
           >
-            YOUR PROFILE
-          </a>
+            Your Profile
+          </motion.a>
         </li>
       </ul>
     </nav>
