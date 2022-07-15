@@ -17,7 +17,7 @@ export default function Navbar() {
 
       <ul className="w-[55rem] h-full text-[2rem] text-secondary-background flex items-center justify-between">
         <li>
-          <a href="">Tournaments</a>
+        <motion.a whileHover={{ textShadow: "0px 0px 8px"}} href="">Tournaments</motion.a>
         </li>
         <li>
           <motion.a whileHover={{ textShadow: "0px 0px 8px"}} href="">About</motion.a>

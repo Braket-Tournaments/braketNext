@@ -3,17 +3,20 @@ import { motion } from "framer-motion";
 // Add sequential animation when objects appear through scrolling
 const scrollTransitions = {
     offScreen: {
-        y: 100
     },
     onScreen: {
-        y: 0,
         transition: {
             type: "spring",
             bounce: 0.4,
-            staggerChildren: 0.5,
-            delayChildren: 0.3
+            staggerChildren: 0.3,
+            delayChildren: 0.1,
         }
     }
+};
+
+const itemA = {
+    offScreen: {y: 100 },
+    onScreen: {y: 0 },
 };
 
     export default function Features() {
@@ -49,24 +52,24 @@ const scrollTransitions = {
                         </svg>
 
                     {/* Categories */}
-                        <motion.div initial="offScreen" animate="onScreen" variants = {scrollTransitions} viewport= {{once: false, amount: 0.2}} className="h-full w-full flex flex-row mb-20 relative">
+                        <motion.div variants = {scrollTransitions} initial="offScreen" whileInView="onScreen"  viewport= {{once: false, amount: 0.2}} className="h-full w-full flex flex-row mb-20 relative">
                                 <div className="w-5%"></div>
                                     <div className="relative w-80%/3 h-[65%]"> 
                                         {/* <motion.img initial={{ opacity: 0 }} whileHover={{ opacity: 1, transition: { duration: 1.2}}} className="w-full h-full absolute max-w-full max-h-full x" src="/images/brandon.png"/> */}
-                                        <motion.img whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
+                                        <motion.img variants = {itemA} whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
                                         
                                     </div>
                                 <div className="w-5%"></div>
                                     <div className="relative w-80%/3 h-[65%]"> 
-                                        <motion.img whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
+                                        <motion.img variants = {itemA} whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
                                     </div>
                                 <div className="w-5%"></div>
                                     <div className="relative w-80%/3 h-[65%]"> 
-                                        <motion.img whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
+                                        <motion.img  variants = {itemA} whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
                                     </div>
                                 <div className="w-5%"></div>
                                     <div className="relative w-80%/3 h-[65%]"> 
-                                        <motion.img whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
+                                        <motion.img variants = {itemA} whileHover={{ rotateY: 170, transition: { duration: 1.2 }, opacity: [1,1,0] }} className="w-full h-full absolute max-w-full max-h-full x" src="/images/Organizations.png"/>
                                     </div>
                                 <div className="w-5%"></div>
 

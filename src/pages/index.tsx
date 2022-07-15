@@ -7,6 +7,7 @@ import ReadyToStart from "../../components/home/ready-to-start"
 import Footer from "../../components/global/footer"
 import Features from "../../components/home/features";
 import PitchDeck from "../../components/home/pitch-deck"
+import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
       <Navbar />
       <PitchDeck />
       <SupportedGames />
-      {/* <Features /> */}
+      <Features />
       <ReadyToStart />
       <Footer />
     </div>
