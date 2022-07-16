@@ -6,20 +6,26 @@ import { BsChevronDown } from "react-icons/bs";
 export default function Navbar() {
   const { data: session } = useSession();
 
-  const [showDropdown, toggleDropdown] = useState(false);
-
-  function handleLoginProfileClick() {
-    toggleDropdown(!showDropdown);
-  }
-
   function LoginProfile() {
+    const [expanded, setExpanded] = useState(false);
+
+    function expand() {
+      setExpanded(true);
+    }
+
+    function close() {
+      setExpanded(false);
+    }
+
     if (session) {
       return (
-        <div className="w-[var(--navbar-login-profile-width)] h-full">
-          <div
-            className="w-[var(--navbar-login-profile-width)] h-full flex items-center justify-between cursor-pointer"
-            onClick={handleLoginProfileClick}
-          >
+        <div
+          className="w-[var(--navbar-login-profile-width)] h-full"
+          tabIndex={0}
+          onFocus={expand}
+          onBlur={close}
+        >
+          <div className="w-[var(--navbar-login-profile-width)] h-full flex items-center justify-between cursor-pointer">
             <img
               src="/images/default_pfp.jpg"
               className="w-auto h-[65%]"
@@ -30,33 +36,35 @@ export default function Navbar() {
             </p>
             <BsChevronDown className="w-auto h-[30%] mr-[1rem] text-secondary-background" />
           </div>
-          <ul
-            className={`absolute w-[var(--navbar-login-profile-width)] text-[2rem] text-white bg-main-red ${
-              showDropdown ? "" : "hidden"
-            }`}
-          >
-            <li className="ml-[2.5rem] my-[1.5rem]">
-              <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
-                Profile
-              </motion.a>
-            </li>
-            <li className="ml-[2.5rem] my-[1.5rem]">
-              <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
-                Tournaments
-              </motion.a>
-            </li>
-            <li className="ml-[2.5rem] my-[1.5rem]">
-              <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
-                Settings
-              </motion.a>
-            </li>
-            <li className="h-[0.1rem] bg-white" />
-            <li className="ml-[2.5rem] my-[1.5rem]">
-              <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
-                Log Out
-              </motion.a>
-            </li>
-          </ul>
+          {expanded ? (
+            <ul className="absolute w-[var(--navbar-login-profile-width)] text-[2rem] text-white bg-main-red">
+              <li className="ml-[2.5rem] my-[1.5rem]">
+                <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
+                  Profile
+                </motion.a>
+              </li>
+              <li className="ml-[2.5rem] my-[1.5rem]">
+                <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
+                  Tournaments
+                </motion.a>
+              </li>
+              <li className="ml-[2.5rem] my-[1.5rem]">
+                <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
+                  Settings
+                </motion.a>
+              </li>
+              <li className="h-[0.1rem] bg-white" />
+              <li className="ml-[2.5rem] my-[1.5rem]">
+                <motion.p
+                  className="cursor-pointer"
+                  whileHover={{ textShadow: "0px 0px 8px" }}
+                  onClick={() => signOut()}
+                >
+                  Log Out
+                </motion.p>
+              </li>
+            </ul>
+          ) : null}
         </div>
       );
     } else {
