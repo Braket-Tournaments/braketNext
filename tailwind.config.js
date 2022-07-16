@@ -66,6 +66,7 @@ module.exports = {
         "sign-up-accent": "#4E8098",
       },
       dropShadow: {
+        standard: "0rem 0.4rem 0.4rem rgb(0 0 0 / 0.25)",
         arrowsvg: "0rem 0.4rem 0.4rem rgb(0 0 0 / 0.4)",
       },
       width: {

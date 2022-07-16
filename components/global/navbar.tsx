@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { BsChevronDown } from "react-icons/bs";
+import { BsChevronDown } from "react-icons/Bs";
 
 export default function Navbar() {
   const { data: session } = useSession();
@@ -17,6 +17,12 @@ export default function Navbar() {
       setExpanded(false);
     }
 
+    function toggle(e: Event) {
+      e.preventDefault();
+      e.stopPropagation();
+      setExpanded(!expanded);
+    }
+
     if (session) {
       return (
         <div
@@ -24,6 +30,7 @@ export default function Navbar() {
           tabIndex={0}
           onFocus={expand}
           onBlur={close}
+          onMouseDown={toggle}
         >
           <div className="w-[var(--navbar-login-profile-width)] h-full flex items-center justify-between cursor-pointer">
             <img
@@ -69,15 +76,15 @@ export default function Navbar() {
       );
     } else {
       return (
-        <div className="flex flex-row">
+        <div className="w-[var(--navbar-login-profile-width)] h-full text-[1.75rem] text-white flex items-center justify-between">
           <button
-            className="ml-r2 mr-r1 w-r9 h-full rounded-xl bg-log-in-button justify-center drop-shadow-nav-buttons"
+            className="w-[10rem] h-[60%] rounded-xl bg-log-in-button justify-center drop-shadow-standard"
             onClick={() => signIn()}
           >
             LOG IN
           </button>
           <button
-            className="ml-r2 mr-r1 w-r9 h-full rounded-xl bg-log-in-button justify-center drop-shadow-nav-buttons"
+            className="w-[10rem] h-[60%] rounded-xl bg-sign-up-button justify-center drop-shadow-standard"
             onClick={() => signIn()}
           >
             SIGN IN
@@ -95,7 +102,7 @@ export default function Navbar() {
           className="w-auto h-[75%] bg-secondary-background rounded-full drop-shadow-logo"
           alt="Logo"
         />
-        <p className="text-[3.3rem] text-secondary-background tracking-wider">
+        <p className="text-[3.3rem] text-secondary-background tracking-wider drop-shadow-[0_1rem_0.4rem_rgba(0,0,0,0.25)]">
           BRAKET
         </p>
       </a>
