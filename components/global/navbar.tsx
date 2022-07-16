@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { BsChevronDown } from "react-icons/Bs";
@@ -7,32 +7,28 @@ export default function Navbar() {
   const { data: session } = useSession();
 
   function LoginProfile() {
-    const [expanded, setExpanded] = useState(false);
-
-    function expand() {
-      setExpanded(true);
-    }
-
-    function close() {
-      setExpanded(false);
-    }
-
-    function toggle(e: Event) {
-      e.preventDefault();
-      e.stopPropagation();
-      setExpanded(!expanded);
-    }
+    const [showDropdown, setShowDropdown] = useState(false);
 
     if (session) {
       return (
         <div
           className="w-[var(--navbar-login-profile-width)] h-full"
           tabIndex={0}
-          onFocus={expand}
-          onBlur={close}
-          onMouseDown={toggle}
+          onFocus={() => {
+            setShowDropdown(true);
+          }}
+          onBlur={() => {
+            setShowDropdown(false);
+          }}
         >
-          <div className="w-[var(--navbar-login-profile-width)] h-full flex items-center justify-between cursor-pointer">
+          <div
+            className="w-[var(--navbar-login-profile-width)] h-full flex items-center justify-between cursor-pointer"
+            onMouseDown={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setShowDropdown(!showDropdown);
+            }}
+          >
             <img
               src="/images/default_pfp.jpg"
               className="w-auto h-[65%]"
@@ -43,7 +39,7 @@ export default function Navbar() {
             </p>
             <BsChevronDown className="w-auto h-[30%] mr-[1rem] text-secondary-background" />
           </div>
-          {expanded ? (
+          {showDropdown ? (
             <ul className="absolute w-[var(--navbar-login-profile-width)] text-[2rem] text-white bg-main-red">
               <li className="ml-[2.5rem] my-[1.5rem]">
                 <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
@@ -109,7 +105,9 @@ export default function Navbar() {
 
       <ul className="w-[55rem] h-full text-[2rem] text-secondary-background flex items-center justify-between">
         <li>
-          <a href="">Tournaments</a>
+          <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
+            Tournaments
+          </motion.a>
         </li>
         <li>
           <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
