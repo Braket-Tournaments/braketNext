@@ -9,13 +9,13 @@
     "lint": "prisma generate && next lint"
   },
   "dependencies": {
-    "framer-motion": "^6.3.16",
     "@next-auth/prisma-adapter": "^1.0.3",
     "@prisma/client": "^4.0.0",
     "@trpc/client": "^9.25.3",
     "@trpc/next": "^9.25.3",
     "@trpc/react": "^9.25.3",
     "@trpc/server": "^9.25.3",
+    "framer-motion": "^6.3.16",
     "next": "12.1.6",
     "next-auth": "^4.7.0",
     "react": "18.2.0",

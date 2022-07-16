@@ -1,45 +1,60 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useSession, signIn, signOut } from "next-auth/react";
-import Image from "next/image";
-import { userInfo } from "os";
-import default_pfp from "../../public/images/default_pfp.jpg";
+import { BsChevronDown } from "react-icons/bs";
 
 export default function Navbar() {
   const { data: session } = useSession();
-  console.log(session);
+
+  const [showDropdown, toggleDropdown] = useState(false);
+
+  function handleLoginProfileClick() {
+    toggleDropdown(!showDropdown);
+  }
 
   function LoginProfile() {
     if (session) {
       return (
-        <div className="flex flex-col">
-          <div className="flex flex-row">
+        <div className="w-[var(--navbar-login-profile-width)] h-full">
+          <div
+            className="w-[var(--navbar-login-profile-width)] h-full flex items-center justify-between cursor-pointer"
+            onClick={handleLoginProfileClick}
+          >
             <img
-              className=""
-              src="https://lh3.googleusercontent.com/a-/AFdZucpNibb1o6Ux-heSeS_audW7HRnxqWA1lfwdCbdW5g=s96-c"
+              src="/images/default_pfp.jpg"
+              className="w-auto h-[65%]"
               alt="Profile Picture"
             />
-            <p>{session.user?.name}</p>
+            <p className="w-auto text-[2rem] text-secondary-background align-middle">
+              {session.user?.name}
+            </p>
+            <BsChevronDown className="w-auto h-[30%] mr-[1rem] text-secondary-background" />
           </div>
-          <ul className="">
-            <li>
-              <a className="" href="">
+          <ul
+            className={`absolute w-[var(--navbar-login-profile-width)] text-[2rem] text-white bg-main-red ${
+              showDropdown ? "" : "hidden"
+            }`}
+          >
+            <li className="ml-[2.5rem] my-[1.5rem]">
+              <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
                 Profile
-              </a>
+              </motion.a>
             </li>
-            <li>
-              <a className="" href="">
+            <li className="ml-[2.5rem] my-[1.5rem]">
+              <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
                 Tournaments
-              </a>
+              </motion.a>
             </li>
-            <li>
-              <a className="" href="">
+            <li className="ml-[2.5rem] my-[1.5rem]">
+              <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
                 Settings
-              </a>
+              </motion.a>
             </li>
-            <li>
-              <a className="" href="" onClick={() => signOut()}>
+            <li className="h-[0.1rem] bg-white" />
+            <li className="ml-[2.5rem] my-[1.5rem]">
+              <motion.a whileHover={{ textShadow: "0px 0px 8px" }} href="">
                 Log Out
-              </a>
+              </motion.a>
             </li>
           </ul>
         </div>
@@ -65,11 +80,11 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="w-full h-[var(--navbar-height)] bg-main-red flex items-center justify-between">
-      <a className="w-r25 h-full flex items-center" href="/">
+    <nav className="w-full h-[var(--navbar-height)] px-[5rem] bg-main-red flex items-center justify-between">
+      <a className="w-r25 h-full flex items-center gap-x-[2rem]" href="/">
         <img
           src="/images/logo.png"
-          className="w-[4.6rem] h-auto bg-secondary-background rounded-full mx-r2 drop-shadow-logo"
+          className="w-auto h-[75%] bg-secondary-background rounded-full drop-shadow-logo"
           alt="Logo"
         />
         <p className="text-[3.3rem] text-secondary-background tracking-wider">
@@ -98,23 +113,7 @@ export default function Navbar() {
         </li>
       </ul>
 
-      <ul className="w-[40rem] h-full text-[1.25rem] text-secondary-background tracking-wider flex items-center justify-between">
-        <li className="h-3/5">
-          <LoginProfile />
-        </li>
-        <li className="h-3/5">
-          {/* <motion.a
-            whileHover={{
-              scale: 1.2,
-              boxShadow: "0px 0px 5px 4px",
-            }}
-            className="w-r9 h-full rounded-xl bg-sign-up-button justify-center drop-shadow-nav-buttons"
-            href=""
-          >
-            Your Profile
-          </motion.a> */}
-        </li>
-      </ul>
+      <LoginProfile />
     </nav>
   );
 }
