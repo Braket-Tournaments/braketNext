@@ -1,68 +1,108 @@
-import { useRef } from "react";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import React, { useState, useRef, useEffect } from "react";
 import DecorLine from "../items/decor-line";
 
 export default function PitchDeck() {
-  /* function Carousel() {
-    const img1 = useRef<HTMLDivElement>(null);
-    const img2 = useRef<HTMLDivElement>(null);
-    const img3 = useRef<HTMLDivElement>(null);
+  function Carousel() {
+    const [imgIndex, setImgIndex] = useState<number>(0);
+    const imgIndexRef = useRef(imgIndex);
+    imgIndexRef.current = imgIndex;
 
-    img1.current?.classList.add("group-hover:translate-x-full");
+    const [timerID, setTimerID] = useState<null | ReturnType<
+      typeof setTimeout
+    >>(null);
+    const timerIDRef = useRef(timerID);
+    timerIDRef.current = timerID;
+
+    const images: string[] = [
+      "/images/carousel_img_1.jpg",
+      "/images/carousel_img_2.jpg",
+      "/images/carousel_img_3.jpg",
+    ];
+
+    function setNextSlideTimer() {
+      clearTimeout(Number(timerIDRef.current));
+
+      const id: null | ReturnType<typeof setTimeout> = setTimeout(() => {
+        setImgIndex(
+          imgIndexRef.current + 1 === images.length
+            ? 0
+            : imgIndexRef.current + 1
+        );
+
+        clearTimeout(Number(timerIDRef.current));
+
+        setNextSlideTimer();
+      }, 10000);
+
+      setTimerID(id);
+    }
+
+    // The empty array in the second parameter makes useEffect() only run once.
+    useEffect(() => {
+      setNextSlideTimer();
+    }, []);
 
     return (
-      <div className="h-4/6 w-[50%] bg-white relative group">
-        <div className="h-1/2 w-full absolute bottom-10">
-          <button className="w-20 h-20 float-left">
-            <AiOutlineArrowLeft className="h-20 w-20" />
-          </button>
-          <button className="w-20 h-20 float-right">
-            <AiOutlineArrowRight className="h-20 w-20" />
-          </button>
+      <div className="relative w-[var(--home-carousel-width)] h-[var(--home-carousel-height)] ml-[calc(1.5rem+6vw)] flex justify-center align-middle">
+        <div className="relative w-full h-full">
+          {images.map((url, i) => {
+            return (
+              <img
+                src={url}
+                className={`absolute transition-opacity duration-[500ms] object-cover object-center ${
+                  i === imgIndex
+                    ? "z-[1] delay-[0ms]"
+                    : "opacity-0 delay-[500ms]"
+                }`}
+                alt={`Carousel Image ${i + 1}`}
+              />
+            );
+          })}
         </div>
-
-        <div className="w-full h-10 bottom-0 absolute flex flex-row justify-center space-x-10">
-          <span className="h-3 w-10 bg-slate-800"></span>
-          <span className="h-3 w-10 bg-slate-800"></span>
-          <span className="h-3 w-10 bg-slate-800"></span>
+        <div className="absolute w-full top-[calc(100%+1.5rem)] flex align-middle justify-center gap-x-[2rem]">
+          {images.map((url, i) => {
+            return (
+              <div
+                className={`w-[1rem] h-[1rem] rounded-full transition-opacity duration-[500ms] ${
+                  i === imgIndex ? "bg-white/75" : "bg-white/25 cursor-pointer"
+                }`}
+                onClick={() => {
+                  setImgIndex(i);
+                  setNextSlideTimer();
+                }}
+              />
+            );
+          })}
         </div>
-
-        <div
-          ref={img1}
-          className="bg-red-900 h-full w-full translate-x-full absolute  group-hover:translate-x-full"
-        ></div>
-        <div
-          ref={img2}
-          className="bg-blue-900 h-full w-full -translate-x-full absolute group-hover:translate-x-full"
-        ></div>
-        <div
-          ref={img3}
-          className="bg-orange-900 h-full w-full absolute group-hover:translate-x-full"
-        ></div>
       </div>
     );
-  } */
+  }
+
   return (
-    <div className="bg-main-background h-[calc(100vh-var(--navbar-height))] w-full flex items-center justify-between">
-      <div className="bg-white w-[var(--home-carousel-width)] h-[var(--home-carousel-height)] ml-[calc(1.5rem+6vw)] flex justify-center align-middle">
-        <h1 className="h-auto text-[10rem]">CAROUSEL</h1>
-      </div>
-      <div className="bg-pink-400 w-[calc(var(--home-carousel-width)*0.85)] h-[var(--home-carousel-height)] flex flex-col justify-between">
-        <div className="inline-block">
-          <h1 className="text-white text-[3rem]">HEADER</h1>
-          <div className="flex drop-shadow-arrowsvg">
-            <DecorLine className="w-0 flex-grow-[1]" width={51.5} />
+    <div className="w-full h-[calc(100vh-var(--navbar-height))] bg-main-background flex items-center justify-between">
+      <Carousel />
+      <div className="w-[calc(var(--home-carousel-width)*0.85)] h-[var(--home-carousel-height)] flex flex-col justify-center gap-y-[3rem]">
+        <div className="flex flex-col">
+          <h1 className="text-white text-[3.5rem] self-center">HEADER</h1>
+          <div className="w-[calc(80%)] drop-shadow-arrowsvg flex self-end">
+            <DecorLine className="w-0 flex-grow-[1]" width={100} />
           </div>
         </div>
 
-        <ul className="ml-32 text-white space-y-1 text-[2em] mb-36 list-disc">
-          <li>A</li>
-          <li>B</li>
-          <li>C</li>
-        </ul>
+        <div className="w-full pl-[5rem] pr-[10rem] text-[2rem] text-white">
+          <p>
+            Lorem Ipsum is the single greatest threat. We are not - we are not
+            keeping up with other websites. Lorem Ipsum best not make any more
+            threats to your website. It will be met with fire and fury like the
+            world has never seen. Does everybody know that pig named Lorem
+            Ipsum?
+          </p>
+        </div>
 
-        <div className="h-[8%] w-full flex flex-row justify-center">
-          <div className="h-full w-9/12 bg-white mr-10"></div>
+        <div className="w-full flex flex-row justify-center">
+          <button className="px-[6rem] py-[1rem] rounded-[2rem] text-[2.8rem] bg-sign-up-button">
+            CREATE BRAKET
+          </button>
         </div>
       </div>
     </div>
