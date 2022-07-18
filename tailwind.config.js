@@ -1,14 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin");
-const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin")
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        bracketParallax: "url(../public/images/download.png)",
+      },
       spacing: {
         r0: "0rem",
         "r0.125": "0.125rem",
@@ -86,4 +89,4 @@ module.exports = {
       },
     },
   },
-};
+}

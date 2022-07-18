@@ -7,11 +7,11 @@ export default function ReadyToStart() {
           GET STARTED
         </h1>
       </button>
-    );
+    )
   }
 
   return (
-    <div className="bg-secondary-red h-[46rem] w-full flex flex-col justify-center items-center">
+    <div className="bg-bracketParallax bg-center bg-fixed bg-cover h-[46rem] w-full flex flex-col justify-center items-center">
       <div className="flex flex-col text-center text-white">
         <h1 className="text-6xl tracking-wide mb-6">Ready to Start?</h1>
         <h5 className="text-4xl tracking-wide">
@@ -20,5 +20,5 @@ export default function ReadyToStart() {
       </div>
       <PageNavTournament />
     </div>
-  );
+  )
 }

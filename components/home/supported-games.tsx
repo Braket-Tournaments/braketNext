@@ -1,15 +1,35 @@
+import { motion } from "framer-motion"
+
+const parent = {
+  offScreen: {},
+  onScreen: {
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const animate = {
+  offScreen: { y: 100 },
+  onScreen: { y: 0, transition: { type: "spring", bounce: 0.5 } },
+}
+
 export default function SupportedGames() {
   function SupportedGameIcon({
     gameName,
     initalImg,
     hoverImg,
   }: {
-    gameName: string;
-    initalImg: string;
-    hoverImg: string;
+    gameName: string
+    initalImg: string
+    hoverImg: string
   }) {
     return (
-      <div className="relative w-80%/3 z-1 h-[65%] shadow-2xl hover:cursor-pointer hover:shadow-none">
+      <motion.div
+        variants={animate}
+        className="relative w-80%/3 z-1 h-[65%] shadow-2xl hover:cursor-pointer hover:shadow-none"
+      >
         <img
           className="absolute h-full w-full max-w-full max-h-full transition duration-500"
           src={hoverImg}
@@ -22,8 +42,8 @@ export default function SupportedGames() {
           src={initalImg}
           alt={gameName}
         />
-      </div>
-    );
+      </motion.div>
+    )
   }
 
   return (
@@ -54,7 +74,13 @@ export default function SupportedGames() {
           fill="#904E55"
         />
       </svg>
-      <div className="h-full relative">
+      <motion.div
+        variants={parent}
+        initial="offScreen"
+        whileInView="onScreen"
+        viewport={{ once: true, amount: 0.2 }}
+        className="h-full relative"
+      >
         <div className="flex flex-row h-full w-full mt-1 absolute group">
           <div className="w-5%"></div>
           <SupportedGameIcon
@@ -86,7 +112,7 @@ export default function SupportedGames() {
           <div className="relative w-80%/3 -z-10 h-40"></div>
           <div className="w-5%"></div>
         </div>
-      </div>
+      </motion.div>
     </div>
-  );
+  )
 }
