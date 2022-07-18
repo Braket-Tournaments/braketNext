@@ -1,3 +1,5 @@
+import DecorLine from "../items/decor-line";
+
 export default function SupportedGames() {
   function SupportedGameIcon({
     gameName,
@@ -27,34 +29,15 @@ export default function SupportedGames() {
   }
 
   return (
-    <div className="flex flex-col h-[38rem] w-full]">
-      <div className="text-4xl ml-24 mt-8 shadow-gray-700">SUPPORTED GAMES</div>
-      <svg
-        className="drop-shadow-arrowsvg"
-        width="560"
-        height="100"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          id="svg_3"
-          height="0.33333"
-          width="550"
-          y="20"
-          x="0"
-          stroke="#904E55"
-          fill="#904E55"
-        />
-        <ellipse
-          ry="5"
-          rx="5"
-          id="svg_4"
-          cy="20"
-          cx="555"
-          stroke="#904E55"
-          fill="#904E55"
-        />
-      </svg>
-      <div className="h-full relative">
+    <div className="w-full h-[100vh] flex flex-col justify-center gap-y-[25%]">
+      <div className="w-[60rem] flex flex-col">
+        <p className="mr-[4rem] text-[3.5rem] text-right">SUPPORTED GAMES</p>
+        <div className="drop-shadow-arrow-svg flex">
+          <DecorLine className="w-0 flex-grow-[1]" width={60} isLeft={false} />
+        </div>
+      </div>
+
+      <div className="h-[50%] relative">
         <div className="flex flex-row h-full w-full mt-1 absolute group">
           <div className="w-5%"></div>
           <SupportedGameIcon

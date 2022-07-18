@@ -84,7 +84,7 @@ export default function PitchDeck() {
       <div className="w-[calc(var(--home-carousel-width)*0.85)] h-[var(--home-carousel-height)] flex flex-col justify-center gap-y-[3rem]">
         <div className="flex flex-col">
           <h1 className="text-white text-[3.5rem] self-center">HEADER</h1>
-          <div className="w-[calc(80%)] drop-shadow-arrowsvg flex self-end">
+          <div className="w-[calc(80%)] drop-shadow-arrow-svg flex self-end">
             <DecorLine className="w-0 flex-grow-[1]" width={100} />
           </div>
         </div>
